@@ -1,2 +1,2 @@
-# pong-on
-Pong Online
+# pong-online
+Game Pong online implementado em socket.

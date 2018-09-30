@@ -1,0 +1,10 @@
+{
+  "name": "pong-online",
+  "version": "0.0.1",
+  "description": "pong game online",
+  "dependencies": {
+    "express": "^4.15.2",
+    "socket.io": "^2.1.1",
+    "pug": "^3.5.2"
+  }
+}

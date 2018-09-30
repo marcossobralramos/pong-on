@@ -1,0 +1,65 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,600,700,400);
+ 
+.player {
+    padding: 50px 20px;
+    background: #FFFFFF;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.player-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+.player-name {
+  color: #0066AA;
+  font-weight: bold;
+}
+
+.player-email {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  color: #0066AA;
+}
+
+.message {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.g-signin2,
+.g-signin2 .abcRioButton {
+  display: block;
+  margin: 20px auto 0 auto;
+  text-align: center;
+}
+
+.center{
+  display: block;
+  margin: 20px auto 0 auto;
+  text-align: center;
+}
+
+.mt-0 {
+  margin-top: 0 !important;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.player-victories {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  font-size: 44px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}

@@ -1,0 +1,117 @@
+doctype html
+html
+    head
+    title Pong Game
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, shrink-to-fit=no')
+    link(
+        rel='stylesheet',
+        href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css',
+        integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm',
+        crossorigin='anonymous'
+    )
+    link(rel='stylesheet', href='css/players.css')
+    link(rel='stylesheet', href='css/chat.css')
+    link(href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet")
+
+body
+    div.navbar.navbar-expand.static-top
+        span.navbar-brand.mr-1 Pong Online
+        ul.navbar-nav.ml-auto.ml-md-0
+            li.nav-item.dropdown.no-arrow.mx-1
+                a(class="nav-link.dropdown-toggle", id="view-chat", data-toggle="modal", data-target="#modal-chat")
+                    i.fa.fa-commenting-o
+                    span.badge.badge-danger#chat-message-count
+            li.nav-item.dropdown.no-arrow.mx-1
+                a(class="nav-link.dropdown-toggle", data-toggle="modal", data-target="#modal-info")
+                    i.fa.fa-question-circle-o
+
+    div.container-fluid
+        div.row
+            div.player.col-sm#iplayer1-info
+                p.player-email Player 1
+                img(class='player-photo', id='player1-photo', src=`${player1_photo}`)
+                h1
+                    span.player-name#player1-name= player1_name
+                p.player-email#player1-email= player1_email
+            div.col-sm#game
+                div#pong
+                div.text-center
+                    p.mt-0.mb-0.player-email VITÓRIAS
+                    span#player1-victories.player-victories
+                    span    X   
+                    span#player2-victories.player-victories
+            div.player.col-sm#iplayer2-info
+                p.player-email Player 2
+                img(class='player-photo', id='player2-photo', src=`${player2_photo}`)
+                h1
+                    span.player-name#player2-name= player2_name
+                p.player-email#player2-email= player2_email
+
+    div(class="modal", tabindex="-1", role="dialog", id="modal-chat")
+        div(class="modal-dialog modal-dialog-centered modal-lg", role="document")
+            div.modal-content
+                div.modal-header
+                    h5.modal-title Chat
+                    button(type="button", class="close", data-dismiss="modal", data-target="modal-chat", aria-label="Fechar")
+                        span(aria-hidden="true") &times;
+                div.modal-body
+                    div.container
+                        div.frame.col-sm-12.w-100
+                            ul.chat#chat
+                        div
+                            input(class="mytext w-100", id="mytext" placeholder="Digite uma mensagem...")
+                            div.p10
+                                button.btn.btn-success.w-100#btn-send
+                                    i.fa.fa-send
+
+    div(class="modal", tabindex="-1", role="dialog", id="modal-info")
+        div(class="modal-dialog", role="document")
+            div.modal-content
+                div.modal-header
+                    h5.modal-title Informações sobre o jogo
+                    button(type="button", class="close", data-dismiss="modal", data-target="modal-info", aria-label="Fechar")
+                        span(aria-hidden="true") &times;
+                div.modal-body
+                    div.text-center
+                        ul.list-group
+                            li.list-group-item
+                                span.font-italic.mt-0.mb-0.text-info.small O primeiro a clicar na mesa inicia o jogo
+                            li.list-group-item
+                                span.font-italic.mt-0.mb-0.text-info.small Setas para cima e para baixo movem a barra
+                            li.list-group-item
+                                span.font-italic.mt-0.mb-0.text-info.small Vence quem fizer 10 pontos
+
+    div(class="modal", tabindex="-1", role="dialog", id="modal-player-win")
+        div(class="modal-dialog", role="document")
+            div.modal-content
+                div.modal-header
+                    h5.modal-title#title-msg-player
+                    button(type="button", class="close", data-dismiss="modal", data-target="modal-info", aria-label="Fechar")
+                        span(aria-hidden="true") &times;
+                div.modal-body
+                    p#body-msg-player
+                    
+    script(src='/socket.io/socket.io.js')
+
+    script(
+        src='https://code.jquery.com/jquery-3.2.1.slim.min.js',
+        integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN',
+        crossorigin='anonymous'
+    )
+
+    script(
+        src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js',
+        integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q',
+        crossorigin='anonymous'
+    )
+
+    script(
+        src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js',
+        integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl',
+        crossorigin='anonymous'
+    )
+
+    script(src='/js/svg.min.js')
+
+    script(src='/js/pong.js')
+    script(src='/js/chat.js')
