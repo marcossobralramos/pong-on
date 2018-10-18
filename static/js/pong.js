@@ -55,10 +55,9 @@ draw.viewbox(0,0,450,300)
 // desenha o background
 var background = draw.rect(width, height).fill('#dde3e1')
 
-// desenha linha
+// desenha a linha de divisão da mesa
 var line = draw.line(width/2, 0, width/2, height)
 line.stroke({ width: 5, color: '#fff', dasharray: '5,5' })
-
 
 // define o tamanho da barra dos jogadores
 var paddleWidth = 15, paddleHeight = 80
@@ -70,7 +69,6 @@ paddleLeft.x(0).cy(height/2).fill('#00ff99')
 // cria e posiciona a barra do jogador à direita
 var paddleRight = paddleLeft.clone()
 paddleRight.x(width-paddleWidth).fill('#ff0066')
-
 
 // define o tamanho da bola
 var ballSize = 10
