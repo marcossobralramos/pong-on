@@ -17,7 +17,7 @@ app.set('view engine', 'pug');
 
 // configuração das rotas
 app.get('/', function (req, res) {
-	res.sendFile(__dirname + '/templates/login.html');
+	res.render('game', {});
 });
 
 app.get('/game', function(req, res) {
